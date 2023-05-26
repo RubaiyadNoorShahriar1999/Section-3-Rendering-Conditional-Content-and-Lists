@@ -1,7 +1,16 @@
 const app = Vue.createApp({
   data() {
-    return { goals: [] };
+    // if goals array has a value then the v-if statement will be false
+    return {
+      enteredValue: "",
+      goals: [],
+    };
+  },
+  methods: {
+    addGoal() {
+      this.goals.push(this.enteredValue);
+    },
   },
 });
 
-app.mount('#user-goals');
+app.mount("#user-goals");
