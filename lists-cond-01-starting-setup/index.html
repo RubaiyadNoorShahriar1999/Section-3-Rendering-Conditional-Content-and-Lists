@@ -26,7 +26,12 @@
         No goals have been added yet - please start adding some!
       </p>
       <ul v-else>
-        <li v-for="(goal,index) in goals" @click="removeGoal(index)">
+        <!-- Key is needed for the index to bind with it. On click it will remove the array element and update the index  -->
+        <li
+          v-for="(goal,index) in goals"
+          @click="removeGoal(goal)"
+          :key="index"
+        >
           {{ goal }} - {{ index }}
         </li>
       </ul>
